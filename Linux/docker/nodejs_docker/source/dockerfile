@@ -1,0 +1,11 @@
+FROM node:8.11.2-alpine
+USER node
+RUN whoami
+RUN mkdir /
+WORKDIR /home/node/app
+COPY . .
+RUN ls -la
+RUN ["/bin/ls","-l","-a"]
+CMD node .
+HEALTHCHECK  --interval=5m --timeout=3s \
+  CMD wget --quiet --tries=1 --spider http://localhost:3000 || exit 1
