@@ -21,4 +21,4 @@ sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
 6.  sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
   
 
-![finish]('./image/finish.png')
+![finish](./image/finish.png)
