@@ -21,6 +21,8 @@
       * [ ] class
       * [ ] async/await
       * [ ] Proxy
+  - [ ] Performance
+    + [ ] array 
   - [ ] 杂
     * [ ] nodejs 中的精度问题
     * [ ] nodejs 中作用域的问题
