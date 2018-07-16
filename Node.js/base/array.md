@@ -176,9 +176,7 @@ fakeArray.length //5
 let realArray = [1,2,3,4,5];
 realArray.length //5
 
-```
-
-``` new Array(5).fill(1).map((v,i)=>i)
+new Array(5).fill(1).map((v,i)=>i)
 [ 0, 1, 2, 3, 4 ]
 ```
 
@@ -187,7 +185,7 @@ realArray.length //5
 #### 返回值
 一个新数组
 
-> ### 比较有意思的写法
+### 比较有意思的写法
 #### 切割成二维数组
 ```
 const doChunk = (list, size) => list.reduce((r, v) =>
