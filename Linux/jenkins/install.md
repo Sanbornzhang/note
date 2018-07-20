@@ -22,3 +22,20 @@ sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
   
 
 ![finish](./image/finish.png)
+## docker
+### 获取`jenkins` 镜像
+`sudo  docker pull jenkins`
+### 运行 `jenkins`
+```
+sudo docker run \
+-u root \
+--name jenkins \
+-d \
+-p 8080:8080 \
+-v /home/jenkins:/var/jenkins_home \
+jenkins
+```
+## 获取初始密码
+1. `sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword`       
+2. `cat /home/jenkins/secrets/initialAdminPassword` 
+## 
