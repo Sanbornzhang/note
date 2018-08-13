@@ -1,0 +1,14 @@
+FROM node:alpine
+
+RUN apk add git && \
+    git config --global http.sslverify false
+USER node
+RUN mkdir /home/node/app
+WORKDIR /home/node/app
+RUN git clone http://deploy:123456ASD@192.168.3.184:9443/root/node-project.git
+WORKDIR /home/node/app/node-project
+RUN npm i 
+ENV NODE_ENV=production
+CMD [ "node", "." ]
+HEALTHCHECK  --interval=5m --timeout=3s \
+  CMD wget --quiet --tries=1 --spider http://localhost:3000 || exit 1

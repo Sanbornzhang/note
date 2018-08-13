@@ -18,3 +18,6 @@ sudo docker run -d \
 external_url 'http://0.0.0.0:443'
 gitlab_rails['gitlab_shell_ssh_port'] = 9021
 ```
+## allow local web hook
+`curl -X PUT --header "PRIVATE-TOKEN: XXXXXXXXXXXXXXXXXXXX" 'http://sample.gitlab.com/api/v4/application/settings?allow_local_requests_from_hooks_and_services=true'
+`  

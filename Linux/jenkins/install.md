@@ -38,4 +38,4 @@ jenkins
 ## 获取初始密码
 1. `sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword`       
 2. `cat /home/jenkins/secrets/initialAdminPassword` 
-## 
+  

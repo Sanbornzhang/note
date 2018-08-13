@@ -1,0 +1,21 @@
+# Use an official node.js LTS version
+FROM node:boron
+# set http.sslverify false
+RUN git config --global http.sslverify false
+# create work dir
+RUN mkdir /app
+# set work dir
+WORKDIR /app
+# clone repo
+RUN git clone https://username:password@git.repo/repo.git
+# set work dir
+WORKDIR /app/repo
+# npm i 
+RUN npm i -d
+# set NODE_ENV=production
+ENV NODE_ENV=production
+# Bundle app source
+# also you can install pm2 ,and use pm2 start app
+CMD [ "node", "." ]
+# use user node
+USER node
