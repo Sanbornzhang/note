@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+data:
+  admin-username: ${usernameBase64}
+  admin-password: ${passwordBase64}
+metadata:
+  name: grafana
+  namespace: monitor
+type: Opaque
