@@ -1,0 +1,43 @@
+version: 0.1
+log:
+  accesslog:
+    disabled: true
+  level: debug
+  formatter: text
+  fields:
+    service: registry
+    environment: staging
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+    maxthreads: 100
+  delete:
+    enabled: false
+  redirect:
+    disable: false
+  cache:
+    blobdescriptor: inmemory
+http:
+  addr: localhost:5000
+  prefix: /my/nested/registry/
+  host: ${yourHost}
+  relativeurls: false
+  debug:
+    addr: localhost:5001
+  headers:
+    X-Content-Type-Options: [nosniff]
+  http2:
+    disabled: false
+notifications:
+  endpoints:
+    - name: webhook
+      disabled: false
+      url: ${yourHookURL}
+      timeout: 30s
+      threshold: 5
+      backoff: 1s
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
