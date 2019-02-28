@@ -1,4 +1,6 @@
-## docker insatll
+# install
+这里其实最好应该使用其他方式安装，因为`gitlab`并不是一个单一的应用程序.使用 `compose` 或者 `k8s`都可以.
+## docker install
 `sudo docker pull gitlab/gitlab-ce`
 ### 运行
 ```

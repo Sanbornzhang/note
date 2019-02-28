@@ -1,0 +1,8 @@
+docker run -d \
+    -v /home/ftp:/home/vsftpd \
+    -p 20:20 -p 21:21 -p 47400-47470:47400-47470 \
+    -e FTP_USER=user \
+    -e FTP_PASS=pass \
+    -e PASV_ADDRESS=192.168.0.19 \
+    --name ftp \
+    --restart=always bogem/ftp
